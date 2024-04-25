@@ -1,10 +1,3 @@
-//
-//  Landmarks.swift
-//  Landmarks
-//
-//  Created by student on 19/04/24.
-//
-
 import Foundation
 import SwiftUI
 import CoreLocation
@@ -18,20 +11,23 @@ struct Landmark: Hashable, Codable, Identifiable {
     var description: String
     var isFavorite: Bool
     var isFeatured: Bool
-    
+
+
     var category: Category
-    enum Category: String, CaseIterable, Codable {
+    enum Category: String, CaseIterable, Codable, Hashable {
         case lakes = "Lakes"
         case rivers = "Rivers"
         case mountains = "Mountains"
     }
+
+
     private var imageName: String
     var image: Image {
         Image(imageName)
     }
     var featureImage: Image? {
-            isFeatured ? Image(imageName + "_feature") : nil
-        }
+        isFeatured ? Image(imageName + "_feature") : nil
+    }
 
 
     private var coordinates: Coordinates

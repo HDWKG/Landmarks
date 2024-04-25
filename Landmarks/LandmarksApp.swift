@@ -2,16 +2,18 @@
 //  LandmarksApp.swift
 //  Landmarks
 //
-//  Created by student on 25/04/24.
+//  Created by student on 19/04/24.
 //
 
 import SwiftUI
 
 @main
 struct LandmarksApp: App {
+    @State private var modelData = ModelData()
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView() //VIEW
+                .environment(modelData)
         }
     }
 }
